@@ -13,6 +13,15 @@ export default class GameManager {
     private static _activeGame: Game;
 
     private static _gameList = [
+
+        new Game('Degrees of Lewdity', 'DoL', 'DoL',
+            'DoL', ['start.bat'], 'DoL_Data',
+            'http://www.magicalastrogy.site/api/v1/package/', 'https://raw.githubusercontent.com/ebkr/r2modmanPlus/master/modExclusions.md',
+            [
+                new StorePlatformMetadata(StorePlatform.OTHER)
+            ], "RiskOfRain2.jpg",
+            GameSelectionDisplayMode.VISIBLE, GameInstanceType.GAME, PackageLoader.DOL_LOADER, ["DOL"]),
+
         new Game('Risk of Rain 2', 'RiskOfRain2', 'RiskOfRain2',
             'Risk of Rain 2', ['Risk of Rain 2.exe'], 'Risk of Rain 2_Data',
             'https://thunderstore.io/api/v1/package/', 'https://raw.githubusercontent.com/ebkr/r2modmanPlus/master/modExclusions.md',

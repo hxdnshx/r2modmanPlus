@@ -3,10 +3,11 @@ import Game from '../../../model/game/Game';
 import GameInstructionGenerator from './instructions/GameInstructionGenerator';
 import BepInExGameInstructions from './instructions/loader/BepInExGameInstructions';
 import MelonLoaderGameInstructions from './instructions/loader/MelonLoaderGameInstructions';
+import { DoLGameInstructions } from './instructions/loader/DoLGameInstructions';
 import Profile from '../../../model/Profile';
 import NorthstarGameInstructions from './instructions/loader/NorthstarGameInstructions';
-import { GodotMLGameInstructions } from "../../launching/instructions/instructions/loader/GodotMLGameInstructions";
-import { AncientVRGameInstructions } from "../../launching/instructions/instructions/loader/AncientVRGameInstructions";
+import { GodotMLGameInstructions } from '../../launching/instructions/instructions/loader/GodotMLGameInstructions';
+import { AncientVRGameInstructions } from '../../launching/instructions/instructions/loader/AncientVRGameInstructions';
 
 export interface GameInstruction {
     moddedParameters: string,
@@ -22,6 +23,7 @@ export default class GameInstructions {
         [PackageLoader.NORTHSTAR, new NorthstarGameInstructions()],
         [PackageLoader.GODOT_ML, new GodotMLGameInstructions()],
         [PackageLoader.ANCIENT_DUNGEON_VR, new AncientVRGameInstructions()],
+        [PackageLoader.DOL_LOADER, new DoLGameInstructions()]
     ]);
 
     public static async getInstructionsForGame(game: Game, profile: Profile): Promise<GameInstruction> {
